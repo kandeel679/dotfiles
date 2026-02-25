@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Processes to restart
+processes=(waybar mako mpd xfce-polkit)
+
+for process in "${processes[@]}"; do
+    pkill "$process"
+done
+
+# Start polkit
+/usr/lib/xfce-polkit/xfce-polkit &
+
+# Set wallpaper - Ensure path is correct
+swaybg --output '*' --mode fill \
+    --image ~/.config/hypr/wallpapers/wallpaper.png &
+
+# Apply GTK themes
+~/.config/hypr/scripts/gtkthemes &
+
+# Notifications
+~/.config/hypr/scripts/notifications &
+
+# Statusbar - If this is a waybar launcher, ensure it's backgrounded
+~/.config/hypr/scripts/statusbar &
+
+# Add a "wait" and then force waybar if not already started
+sleep 1 && waybar &
