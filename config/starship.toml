@@ -1,0 +1,25 @@
+add_newline = true
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[package]
+disabled = true
+
+
+[python]
+disabled = true
+
+[username]
+# Only show username if not current user (optional)
+style_user = "bold red"
+show_always = false 

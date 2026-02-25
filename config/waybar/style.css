@@ -1,0 +1,84 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+}
+
+window#waybar {
+    background: rgba(46, 52, 64, 0.9);
+    color: #eceff4;
+}
+
+/* LEFT MODULES */
+#mpris, #taskbar {
+    margin: 5px 5px;
+    padding: 0 12px;
+    background: #3b4252;
+    border-radius: 8px;
+}
+
+#mpris {
+    color: #b48ead;
+}
+
+#taskbar button {
+    padding: 0 4px;
+}
+
+/* CENTERED WORKSPACES */
+#workspaces {
+    margin: 5px 0;
+}
+
+#workspaces button {
+    margin: 0 3px;
+    padding: 0 10px;
+    background: #3b4252;
+    color: #eceff4;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: #81a1c1;
+    color: #2e3440;
+}
+
+/* RIGHT MODULES */
+#language, #cpu, #memory, #temperature, #network, #pulseaudio, #battery, #clock {
+    margin: 5px 3px;
+    padding: 0 10px;
+    background: #3b4252;
+    border-radius: 8px;
+}
+
+#language {
+    color: #81a1c1;
+    font-weight: bold;
+}
+
+#pulseaudio.muted {
+    background: #bf616a;
+    color: #eceff4;
+}
+
+#network.disconnected {
+    background: #bf616a;
+    color: #eceff4;
+}
+
+#clock {
+    margin-right: 10px;
+    background: #434c5e;
+    color: #8fbcbb;
+    font-weight: bold;
+}
+
+#memory { color: #ebcb8b; }
+#cpu { color: #a3be8c; }
+#pulseaudio { color: #88c0d0; }
+
+#tray {
+    margin: 5px 3px;
+    padding: 0 5px;
+}

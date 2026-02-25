@@ -1,0 +1,111 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "spacing": 0,
+
+  "modules-left": [
+    "mpris",
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "cpu",
+    "memory",
+    "temperature",
+    "network",
+    "pulseaudio",
+    "battery",
+    "tray",
+    "clock"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [], "2": [], "3": [], "4": [], "5": []
+    },
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "on-click": "activate"
+  },
+
+  "mpris": {
+    "format": "{player_icon} {status_icon}",
+    "format-paused": "{player_icon} 󰏤",
+    "player-icons": {
+      "default": "󰎆",
+      "spotify": "",
+      "firefox": "",
+      "chromium": ""
+    },
+    "status-icons": {
+      "playing": "󰐊",
+      "paused": "󰏤"
+    },
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous"
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ar": "AR"
+  },
+
+
+  "memory": {
+    "format": "󰍛 {used:0.1f}G/{total:0.1f}G",
+    "on-click": "alacritty -e btop"
+  },
+
+  "clock": {
+    "format": " {:%H:%M}",
+    "on-click": "alacritty -e calcurse"
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°",
+    "on-click": "alacritty -e btop"
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "on-click": "alacritty -e nmtui"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}
