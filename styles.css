@@ -1,0 +1,160 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+
+  background-color: @background;
+
+  color: @foreground;
+
+
+  border: none;
+
+  border-radius: 0;
+
+  min-height: 0;
+
+  font-family: 'JetBrainsMono Nerd Font';
+
+  font-size: 12px;
+
+}
+
+
+.modules-left {
+
+  margin-left: 8px;
+
+}
+
+
+.modules-right {
+
+  margin-right: 8px;
+
+}
+
+
+#workspaces button {
+
+  all: initial;
+
+  padding: 0 6px;
+
+  margin: 0 1.5px;
+
+  min-width: 9px;
+
+}
+
+
+#workspaces button.empty {
+
+  opacity: 0.5;
+
+}
+
+
+/* Update your existing module margins here */
+/* Apply a uniform, tighter margin to right-side modules */
+#custom-gpu,
+#memory,
+#temperature,
+#language,
+#clock {
+    margin: 0 4px; /* Reduced from 12px/10px to 6px for a cleaner look */
+    padding: 0 1px;
+}
+
+/* Fix the tray icon spacing */
+#tray {
+    margin-left: 8px;
+}
+
+#tray > .passive,
+#tray > .active,
+#tray > .needs-attention {
+    margin: 0 4px; /* Space between individual background icons like Discord */
+}
+#bluetooth {
+
+  margin-right: 17px;
+
+}
+
+
+#network {
+
+  margin-right: 13px;
+
+}
+
+
+#custom-expand-icon {
+
+  margin-right: 18px;
+
+}
+
+
+tooltip {
+
+  padding: 2px;
+
+}
+
+
+#custom-update {
+
+  font-size: 10px;
+
+}
+
+
+#clock {
+
+  margin-left: 8.75px;
+
+}
+
+
+.hidden {
+
+  opacity: 0;
+
+}
+
+
+#custom-screenrecording-indicator {
+
+  min-width: 12px;
+
+  margin-left: 5px;
+
+  font-size: 10px;
+
+  padding-bottom: 1px;
+
+}
+
+
+#custom-screenrecording-indicator.active {
+
+  color: #a55555;
+
+}
+
+
+#custom-voxtype {
+
+  min-width: 12px;
+
+  margin: 0 0 0 7.5px;
+
+}
+
+
+#custom-voxtype.recording {
+
+  color: #a55555;
+
+}
