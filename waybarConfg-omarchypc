@@ -1,0 +1,74 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "modules-left": ["wlr/taskbar", "mpris","tray"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["cpu", "memory", "temperature", "hyprland/language", "clock","custom/gpu"],
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{name}",
+    "persistent-workspaces": {
+      "HDMI-A-1": [1, 2, 3, 4, 5],
+      "DP-1": [6, 7, 8, 9, 10]
+    }
+  },
+"custom/gpu": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits", // For NVIDIA
+    // "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent", // For AMD
+    "format": "󰾲 {}%",
+    "interval": 5
+},
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "icon-size": 18,
+    "tooltip-format": "{title}"
+  },
+
+ "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} <i>{title}</i>",
+    "player-icons": {
+        "default": "▶",
+        "spotify": "",
+        "zen": "󰈹"
+    },
+    "status-icons": {
+        "paused": "󰏤"
+    },
+    // Truncate the name so it doesn't take over your whole bar
+    "title-len": 15, 
+    "interval": 1,
+    // Add these buttons for control
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-scroll-up": "playerctl volume 0.05+",
+    "on-scroll-down": "playerctl volume 0.05-"
+},
+
+"memory": {
+    "interval": 5,
+    "format": "󰍛 {used:0.1f}G/{total:0.1f}G",
+    "tooltip-format": "RAM: {used}GB / {total}GB",
+    "on-click": "omarchy-launch-or-focus-tui btop"
+},
+
+  "temperature": {
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C"
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ar": "AR"
+  },
+
+"clock": {
+    "format": "{:%I:%M %p}",      // %I is 12-hour, %p is AM/PM
+    "format-alt": "{:%A, %B %d}"
+}
+}
