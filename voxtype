@@ -1,0 +1,55 @@
+
+[hotkey]
+  key = "SCROLLLOCK"
+  modifiers = []
+  mode = PushToTalk
+
+[audio]
+  device = "default"
+  sample_rate = 16000
+  max_duration_secs = 120
+
+[audio.feedback]
+  enabled = true
+  theme = "default"
+  volume = 0.7
+
+[engine]
+  engine = Whisper
+
+[whisper]
+  model = "base.en"
+  language = Single("en")
+  translate = false
+
+[parakeet] (EXPERIMENTAL)
+  (not configured)
+  available models: (none found)
+
+[moonshine] (EXPERIMENTAL)
+  (not configured)
+  available models: (none found)
+
+[sensevoice] (EXPERIMENTAL)
+  (not configured)
+  available models: (none found)
+
+[output]
+  mode = Type
+  fallback_to_clipboard = true
+  driver_order = (default: wtype -> dotool -> ydotool -> clipboard)
+  type_delay_ms = 1
+  pre_type_delay_ms = 0
+
+[output.notification]
+  on_recording_start = true
+  on_recording_stop = true
+  on_transcription = true
+
+[status]
+  icon_theme = "emoji"
+  (resolved icons: idle="🎙\u{fe0f}" recording="🎤" transcribing="⏳" stopped="")
+
+[integration]
+  state_file = "auto"
+  (resolves to: "/run/user/1000/voxtype/state")
